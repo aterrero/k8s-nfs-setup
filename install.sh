@@ -8,11 +8,7 @@ mkdir -p $HOME/.kube
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-apt install nfs-kernel-server
-mkdir /var/nfs/general -p
-chown nobody:nogroup /var/nfs/general
 python masternfsconfigurator.py
-systemctl restart nfs-kernel-server
 
 cat workers | while read line
 do
@@ -23,7 +19,6 @@ do
         scp setup.py root@$line:/root
         scp master root@$line:/root
         scp workernfsconfigurator.py root@$line:/root
-        ssh root@$line -n "apt install nfs-common"
         ssh root@$line -n "cd /root && python3 setup.py && ./joincommand.sh && python3 workernfsconfigurator"
         echo "Finished config node $line"
         echo "########################################################"
