@@ -12,6 +12,7 @@ apt install nfs-kernel-server
 mkdir /var/nfs/general -p
 chown nobody:nogroup /var/nfs/general
 python nfsconfigurator.py
+systemctl restart nfs-kernel-server
 
 cat workers | while read line
 do
