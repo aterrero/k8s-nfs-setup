@@ -9,7 +9,7 @@ sip2.remove('')
 sip2.remove('')
 sip2.remove('')
 
-os.system("apt install nfs-kernel-server")
+os.system("apt -y install nfs-kernel-server")
 
 os.system("ufw enable")
 os.system("ufw allow ssh")
