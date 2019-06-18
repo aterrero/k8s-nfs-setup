@@ -1,7 +1,7 @@
 # k8s-setup
 
 Hello Team, with this repository we will be able to build a 3 node kubernetes cluster
-that incorporates the Kubernetes Networking Model using Flannel.
+that incorporates the Kubernetes Networking Model using Flannel and NFS to create Kubernetes Persistent Volumes.
 
 Assumptions are:
 
@@ -12,6 +12,8 @@ Assumptions are:
 * The master node can ssh into the worker nodes.
 
 * The workers file has been modified with the IPv4 Addresses of your current worker nodes.
+
+* The master file has been modified with the IPv4 Address of your current master node. 
 
 * Permissions on the install.sh file are modified to allow it to be executed.
     
