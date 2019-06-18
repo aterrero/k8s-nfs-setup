@@ -8,8 +8,13 @@ sip2 = sip.split('\n')
 sip2.remove('')
 sip2.remove('')
 sip2.remove('')
+
+os.system(ufw enable)
+os.system(ufw allow ssh)
+
 newconfig = "/var/nfs/general" + " " + " " + " "
 for i in range(len(sip2)):
     newconfig = newconfig + "  {}\(rw,sync,no_subtre_check\)".format(sip2[i])
+    os.system("ufw allow from {} to any port nfs".format(sip2[i]))
 
-os.system("echo %s >> /etc/exports" %newconfig)
+os.system("echo {} >> /etc/exports".format(newconfig))
