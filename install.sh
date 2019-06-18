@@ -23,7 +23,7 @@ do
         scp setup.py root@$line:/root
         scp master root@$line:/root
         scp workernfsconfigurator.py root@$line:/root
-        ssh root@$line -n "cd /root && python3 setup.py && ./joincommand.sh"
+        ssh root@$line -n "cd /root && python3 setup.py && ./joincommand.sh && python3 workernfsconfigurator"
         echo "Finished config node $line"
         echo "########################################################"
     fi
