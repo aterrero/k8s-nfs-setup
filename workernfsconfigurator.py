@@ -1,6 +1,6 @@
 import os
 
-mf = open("manager","r")
+mf = open("master","r")
 mip = mf.read().strip()
 mf.close()
 
