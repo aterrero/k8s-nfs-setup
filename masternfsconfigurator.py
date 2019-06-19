@@ -11,8 +11,8 @@ sip2.remove('')
 
 os.system("apt -y install nfs-kernel-server")
 
-os.system("ufw enable")
 os.system("ufw allow ssh")
+os.system("ufw enable")
 
 os.system("mkdir /var/nfs/general -p")
 os.system("chown nobody:nogroup /var/nfs/general")
