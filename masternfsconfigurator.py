@@ -15,10 +15,10 @@ os.system("apt -y install nfs-kernel-server")
 os.system("ufw allow ssh")
 os.system("ufw enable")
 
-os.system("mkdir /var/nfs/general -p")
-os.system("chown nobody:nogroup /var/nfs/general")
+os.system("mkdir /root/shared -p")
+os.system("chown nobody:nogroup /root/shared")
 
-newconfig = "/var/nfs/general" + " " + " " + " "
+newconfig = "/root/shared" + " " + " " + " "
 for i in range(len(sip2)):
     newconfig = newconfig + "  {}\(rw,sync,no_subtree_check,no_root_squash\)".format(sip2[i])
     os.system("ufw allow from {} to any port nfs".format(sip2[i]))
