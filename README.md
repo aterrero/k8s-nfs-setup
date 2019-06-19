@@ -1,7 +1,7 @@
 # k8s-setup
 
 Hello Team, with this repository we will be able to build a 3 node kubernetes cluster
-that incorporates the Kubernetes Networking Model.
+that incorporates the Kubernetes Networking Model using Flannel and NFS to easily create Kubernetes Persistent Volumes.
 
 Assumptions are:
 
