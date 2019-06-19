@@ -13,7 +13,7 @@ os.system("apt update")
 os.system("apt -y install nfs-kernel-server")
 
 os.system("ufw allow ssh")
-os.system("ufw enable")
+os.system("ufw --force enable")
 
 os.system("mkdir /root/shared -p")
 os.system("chown nobody:nogroup /root/shared")
