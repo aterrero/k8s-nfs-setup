@@ -16,6 +16,7 @@ os.system("ufw allow ssh")
 os.system("ufw --force enable")
 
 os.system("mkdir /root/shared -p")
+os.system("chmod 777 /root/shared")
 os.system("chown nobody:nogroup /root/shared")
 
 newconfig = "/root/shared" + " " + " " + " "
