@@ -3,6 +3,8 @@
 Hello Team, with this repository we will be able to build a 3 node kubernetes cluster
 that incorporates the Kubernetes Networking Model using Flannel and NFS to easily create Kubernetes Persistent Volumes.
 
+The shared folder is /root/shared
+
 Assumptions are:
 
 * 3 xl170 bare metal machines using the emulab-ops/UBUNTU18-64-OSCN-R image from CloudLab.
