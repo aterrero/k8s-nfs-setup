@@ -8,6 +8,7 @@ mkdir -p $HOME/.kube
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+python3 masternfsconfigurator.py
 
 cat workers | while read line
 do
@@ -16,7 +17,9 @@ do
     else
         scp joincommand.sh root@$line:/root
         scp setup.py root@$line:/root
-        ssh root@$line -n "cd /root && python3 setup.py && ./joincommand.sh"
+        scp master.py root@$line:/root
+        scp workernfsconfigurator.py root@$line:/root
+        ssh root@$line -n "cd /root && python3 setup.py && ./joincommand.sh && python3 workernfsconfigurator.py"
         echo "Finished config node $line"
     fi
 done
