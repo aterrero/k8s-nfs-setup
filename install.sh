@@ -23,6 +23,21 @@ do
     fi
 done
 
+#Grafana
+python3 grafanasetup.py "master"
+
+cat workers | while read line
+do
+    if [ "$line" = "-" ]; then
+        echo "Skip $line"
+    else
+        scp grafanasetup.py root@$line:/root
+        ssh -o StrictHostKeyChecking=no root@$line -n "cd /root && python3 grafanasetup.py worker"
+        echo "Finished config node $line"
+        echo "########################################################"
+    fi
+done
+
 #NFS
 python3 masternfsconfigurator.py
 cat workers | while read line
