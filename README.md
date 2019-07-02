@@ -1,7 +1,8 @@
 # k8s-nfs-setup
 
 Hello Team, with this repository we will be able to build a 3 node kubernetes cluster
-that incorporates the Kubernetes Networking Model using Flannel and NFS to easily create Kubernetes Persistent Volumes.
+that incorporates the Kubernetes Networking Model using Flannel and NFS to easily create Kubernetes Persistent Volumes, additionally
+Grafana and Prometheus are installed for resource usage monitoring.
 
 The shared folder is /root/shared
 
