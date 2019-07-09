@@ -26,6 +26,7 @@ As stated in https://github.com/zsl3203/summer/blob/master/prometheus%20%2B%20gr
 After the installation is complete, to finish the setup of grafana follow these steps:
 
 1- Run this command:
+
     ```
     kubectl get svc -n kube-system
     ```
