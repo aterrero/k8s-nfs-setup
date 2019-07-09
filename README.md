@@ -23,7 +23,7 @@ Assumptions are:
 Other than that, just running the install.sh file on your master node should get everything working
 
 As stated in https://github.com/zsl3203/summer/blob/master/prometheus%20%2B%20grafana%20for%20k8s.md,
-After the installation is complete, to finish the setup of grafana follow these steps:
+after the installation is complete, to finish the setup of grafana follow these steps:
 
 1- Run this command:
     
