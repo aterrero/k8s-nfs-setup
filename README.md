@@ -30,7 +30,7 @@ after the installation is complete, to finish the setup of grafana follow these 
     kubectl get svc -n kube-system
     
     
-   To get the port being used by grafana, then on your browser connect to that port on your master node, for instance: 123.123.123.123:30123
+   To get the port being used by grafana, then on your browser connect to that port on your master node, for instance: 123.456.789.012:30123
    
 2- Add a data source like this:
 
