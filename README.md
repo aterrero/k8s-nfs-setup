@@ -29,15 +29,20 @@ After the installation is complete, to finish the setup of grafana follow these 
     ```
     kubectl get svc -n kube-system
     ```
+    
    To get the port being used by grafana, then on your browser connect to that port on your master node
    For instance: 123.123.123.123:30123
    
 2- Add a data source like this:
+
     Type: Prometheus
+    
     Url: http://prometheus:9090
+    
     Access: proxy
     
 3- Import this dashboard:
+
     https:///dashboards/315
 
 
